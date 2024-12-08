@@ -9,7 +9,7 @@ const Neural = () => {
         <div className="grid md:grid-flow-col text-center md:text-start grid-cols-1 md:grid-cols-2 gap-32 text-black  text-2xl  ">
           <div className="w-auto h-auto md:block hidden">
             <Image
-              src="/womennmen.png"
+              src="/women.png"
               width={500}
               height={500}
               alt="Picture of the author"
