@@ -26,7 +26,7 @@ const Classic = () => {
           </div>
           <div className="w-auto h-auto">
             <Image
-              src="/herosection2.png"
+              src="/boy.png"
               width={500}
               height={500}
               alt="Picture of the author"
