@@ -52,7 +52,7 @@ const Post = () => {
 
               <p className="text-gray-600 mb-4">
                 We focus on ergonomics and meeting <br /> you where you work.
-                It&apos;s only a <br />
+                only a <br />
                 keystroke away.
               </p>
 
