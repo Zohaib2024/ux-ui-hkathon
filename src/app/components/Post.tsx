@@ -4,110 +4,74 @@ import { LuAlarmClock } from "react-icons/lu";
 
 const Post = () => {
   return (
-    <div className="flex flex-col justify-center items-center  mx-10 md:mx-32">
-      <div className="flex flex-col justify-center items-center mt-20 ">
-        <h3
-          className="font-semibold text-[#23A6F0]
-]"
-        >
-          Practise Advice
-        </h3>
-        <h1 className="text-5xl font-bold mt-5">Featured Posts</h1>
-        <p className="mt-3 text-center">
+    <div className="flex flex-col justify-center items-center mx-4 md:mx-20 lg:mx-32">
+      {/* Header Section */}
+      <div className="flex flex-col justify-center items-center mt-20 text-center">
+        <h3 className="font-semibold text-[#23A6F0]">Practice Advice</h3>
+        <h1 className="text-4xl md:text-5xl font-bold mt-4">Featured Posts</h1>
+        <p className="mt-3 text-gray-600">
           Problems trying to resolve the conflict between <br />
           the two major realms of Classical physics: Newtonian mechanics
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-y-5">
-        <div className="border-2  ">
-          <Image
-            className="relative"
-            src="/pic1.png"
-            width={500}
-            height={500}
-            alt="Picture of the author"
-          />
-          <div className="absolute">NEW </div>
-          <div className="flex flex-row gap-3 p-5">
-            <ul className="text-blue-500">Google</ul>
-            <ul>Trending</ul>
-            <ul>New</ul>
-          </div>
-          <div className="text-2xl p-3">
-            Loudest à la Madison #1 <br /> (L'integral)
-          </div>
-          <div className="p-3">
-            We focus on ergonomics and meeting <br /> you where you work. It's
-            only a <br />
-            keystroke away.
-          </div>
-          <div className="flex justify-between  p-3">
-            <div className="flex flex-row items-center gap-2">
-              <LuAlarmClock className="text-blue-600" />
-              22 April 2021
+
+      {/* Post Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-6">
+        {/** Post Card */}
+        {[1, 2, 3].map((_, index) => (
+          <div
+            key={index}
+            className="relative border rounded-lg shadow-md overflow-hidden"
+          >
+            {/* Image Section */}
+            <div className="relative w-full h-[300px]">
+              <Image
+                src={`/pic${index + 1}.png`}
+                alt={`Post ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t-lg"
+              />
+              <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+                NEW
+              </div>
             </div>
-            <div>10 comments</div>
-          </div>
-          <div className="p-2">Learn more </div>
-        </div>
-        <div className="border-2  ">
-          <Image
-            src="/pic2.png"
-            width={500}
-            height={500}
-            alt="Picture of the author"
-          />
-          <div className="flex flex-row gap-3 p-5">
-            <ul className="text-blue-500">Google</ul>
-            <ul>Trending</ul>
-            <ul>New</ul>
-          </div>
-          <div className="text-2xl p-3">
-            Loudest à la Madison #1 <br /> (L'integral)
-          </div>
-          <div className="p-3">
-            We focus on ergonomics and meeting <br /> you where you work. It's
-            only a <br />
-            keystroke away.
-          </div>
-          <div className="flex justify-between  p-3">
-            <div className="flex flex-row items-center gap-2">
-              <LuAlarmClock className="text-blue-600" />
-              22 April 2021
+
+            {/* Post Details */}
+            <div className="p-5">
+              <div className="flex flex-row gap-4 text-sm text-gray-500 mb-2">
+                <span className="text-blue-500">Google</span>
+                <span>Trending</span>
+                <span>New</span>
+              </div>
+
+              <h2 className="text-2xl font-semibold mb-2">
+                Loudest à la Madison #1 <br /> (L'integral)
+              </h2>
+
+              <p className="text-gray-600 mb-4">
+                We focus on ergonomics and meeting <br /> you where you work.
+                It's only a <br />
+                keystroke away.
+              </p>
+
+              <div className="flex justify-between text-gray-500 mb-2">
+                <div className="flex items-center gap-2">
+                  <LuAlarmClock className="text-blue-600" />
+                  <span>22 April 2021</span>
+                </div>
+                <span>10 comments</span>
+              </div>
+
+              <a
+                href="#"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Learn more
+              </a>
             </div>
-            <div>10 comments</div>
           </div>
-          <div className="p-2">Learn more </div>
-        </div>
-        <div className="border-2  ">
-          <Image
-            src="/pic3.png"
-            width={500}
-            height={500}
-            alt="Picture of the author"
-          />
-          <div className="flex flex-row gap-3 p-5">
-            <ul className="text-blue-500">Google</ul>
-            <ul>Trending</ul>
-            <ul>New</ul>
-          </div>
-          <div className="text-2xl p-3">
-            Loudest à la Madison #1 <br /> (L'integral)
-          </div>
-          <div className="p-3">
-            We focus on ergonomics and meeting <br /> you where you work. It's
-            only a <br />
-            keystroke away.
-          </div>
-          <div className="flex justify-between  p-3">
-            <div className="flex flex-row items-center gap-2">
-              <LuAlarmClock className="text-blue-600" />
-              22 April 2021
-            </div>
-            <div>10 comments</div>
-          </div>
-          <div className="p-2">Learn more </div>
-        </div>
+        ))}
       </div>
     </div>
   );
