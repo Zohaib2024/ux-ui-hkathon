@@ -1,3 +1,5 @@
+"use client"; // Ensure compatibility with Next.js App Router
+
 import React from "react";
 import Image from "next/image";
 import { LuAlarmClock } from "react-icons/lu";
@@ -17,17 +19,16 @@ const Post = () => {
 
       {/* Post Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-6">
-        {/** Post Card */}
-        {[1, 2, 3].map((_, index) => (
+        {[1, 2, 3].map((item) => (
           <div
-            key={index}
+            key={item}
             className="relative border rounded-lg shadow-md overflow-hidden"
           >
             {/* Image Section */}
             <div className="relative w-full h-[300px]">
               <Image
-                src={`/pic${index + 1}.png`}
-                alt={`Post ${index + 1}`}
+                src={`/pic${item}.png`}
+                alt={`Post ${item}`}
                 layout="fill"
                 objectFit="cover"
                 className="rounded-t-lg"
@@ -51,7 +52,7 @@ const Post = () => {
 
               <p className="text-gray-600 mb-4">
                 We focus on ergonomics and meeting <br /> you where you work.
-                It's only a <br />
+                It&apos;s only a <br />
                 keystroke away.
               </p>
 
